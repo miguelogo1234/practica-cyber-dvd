@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRIVACY IS POWER — Carissa Véliz</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- vis-network -->
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CRT Overlay -->
+  <div class="crt-overlay"></div>
+  <div class="scanlines"></div>
+
+  <!-- Vignette -->
+  <div class="vignette"></div>
+
+  <!-- === INTRO SCREEN === -->
+  <div id="intro-screen" class="intro-screen">
+    <div class="intro-logo">
+      <div class="dvd-logo">
+        <span class="dvd-text">DVD</span>
+        <div class="dvd-arc"></div>
+      </div>
+    </div>
+    <div class="intro-title-block">
+      <div class="intro-subtitle">UNIVERSIDAD · ANÁLISIS CRÍTICO · 2025</div>
+      <h1 class="intro-title">PRIVACY<br/><span class="intro-title-is">IS</span><br/>POWER</h1>
+      <div class="intro-author">— CARISSA VÉLIZ —</div>
+    </div>
+    <button class="btn-enter" id="btn-enter" onclick="enterMain()">
+      <span class="btn-enter-text">▶ INICIAR PRESENTACIÓN</span>
+      <div class="btn-enter-glow"></div>
+    </button>
+    <div class="intro-footer">Pulse cualquier tecla para continuar · REGIÓN 2 · DOLBY DIGITAL</div>
+  </div>
+
+  <!-- === MAIN APP === -->
+  <div id="main-app" class="main-app hidden">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="header-disc">
+          <div class="disc-ring"></div>
+          <div class="disc-hole"></div>
+        </div>
+        <div class="header-titles">
+          <div class="header-label">ANÁLISIS ACADÉMICO · EDICIÓN ESPECIAL</div>
+          <h1 class="header-main">Privacy is Power</h1>
+          <div class="header-author">Carissa Véliz · Oxford University Press · 2021</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">REPRODUCIENDO</span>
+        </div>
+        <div class="timecode" id="timecode">00:00:00</div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="dvd-nav">
+      <div class="nav-track">
+        <button class="nav-btn active" data-section="resumen" onclick="showSection('resumen', this)">
+          <span class="nav-btn-num">01</span>
+          <span class="nav-btn-label">RESUMEN</span>
+          <span class="nav-btn-sub">Tesis & Contra-argumentos</span>
+        </button>
+        <div class="nav-separator">◆</div>
+        <button class="nav-btn" data-section="impresiones" onclick="showSection('impresiones', this)">
+          <span class="nav-btn-num">02</span>
+          <span class="nav-btn-label">IMPRESIONES</span>
+          <span class="nav-btn-sub">Vigencia & IA Actual</span>
+        </button>
+        <div class="nav-separator">◆</div>
+        <button class="nav-btn" data-section="critica" onclick="showSection('critica', this)">
+          <span class="nav-btn-num">03</span>
+          <span class="nav-btn-label">CRÍTICA & DEFENSA</span>
+          <span class="nav-btn-sub">Sin corrección política</span>
+        </button>
+        <div class="nav-separator">◆</div>
+        <button class="nav-btn" data-section="mapa" onclick="showSection('mapa', this)">
+          <span class="nav-btn-num">04</span>
+          <span class="nav-btn-label">MAPA DE AUTORES</span>
+          <span class="nav-btn-sub">Grafo Interactivo</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Content Area -->
+    <main class="content-area">
+
+      <!-- ======= SECTION 01: RESUMEN ======= -->
+      <section id="section-resumen" class="content-section active">
+        <div class="section-header">
+          <div class="section-tag">CAPÍTULO I</div>
+          <h2 class="section-title">Resumen & Contra-argumentos</h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card card-full">
+            <div class="card-header">
+              <span class="card-icon">📡</span>
+              <span class="card-title">TESIS CENTRAL: LA PRIVACIDAD COMO CONDICIÓN DE POSIBILIDAD</span>
+            </div>
+            <p>Carissa Véliz no escribe un panfleto sobre cookies ni un manual de usuario para VPNs. Su argumento es ontológicamente más radical: la privacidad no es una preferencia personal, ni siquiera un derecho civil en sentido liberal clásico. Es la <em>condición infraestructural</em> sobre la que se construye cualquier forma de autonomía política reconocible. Sin privacidad, argumenta, no hay sujeto político —solo datos que votan, consumen y protestan según vectores predecibles.</p>
+            <p>El núcleo del libro es una crítica al <strong>capitalismo de datos</strong>, un sistema en el que la información personal se ha convertido en la materia prima de una nueva economía extractiva. Véliz distingue con precisión quirúrgica entre el acto de <em>compartir</em> datos (que implica consentimiento y reciprocidad) y el acto de <em>recolectar</em> datos, que en la práctica digital contemporánea ocurre sin consentimiento real, sin reciprocidad y con consecuencias asimétricas devastadoras para el usuario.</p>
+            <p>La autora desarrolla el concepto de <strong>"economía de la vigilancia"</strong> no como una anomalía del capitalismo tardío, sino como su lógica más coherente: si el capital siempre ha buscado externalizar costes y apropiarse de bienes comunes, los datos personales representan la última frontera de ese proceso. Tu historial médico, tus patrones de sueño, tu ansiedad manifestada en búsquedas nocturnas —todo ello es valor no pagado que alimenta modelos predictivos vendidos a terceros.</p>
+            <div class="highlight-box">
+              <span class="hl-icon">⚠</span>
+              <span>Tesis nuclear: "Cuando se dice que los datos son el nuevo petróleo, se olvida que el petróleo al menos puede agotarse. Los datos sobre ti se reproducen, se combinan y se venden indefinidamente."</span>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="card-header">
+              <span class="card-icon">🔍</span>
+              <span class="card-title">ARGUMENTO SOBRE EL PODER: ASIMETRÍA RADICAL</span>
+            </div>
+            <p>Véliz articula una <strong>teoría del poder informacional</strong> que debe leerse junto a Foucault, no contra él. Mientras el panóptico foucaultiano describe una arquitectura disciplinaria donde el vigilado <em>se sabe vigilado</em> y modifica su conducta en consecuencia (el efecto disciplinario), el nuevo panóptico digital opera de forma más insidiosa: el sujeto no sólo ignora cuándo es observado, sino que celebra activamente el dispositivo de su vigilancia. El smartphone es el panóptico voluntario; Instagram, su ritual de exposición.</p>
+            <p>La consecuencia política es que el <strong>poder ya no necesita ejercer violencia explícita</strong>. Basta con que las corporaciones tecnológicas posean modelos predictivos suficientemente precisos para saber, antes que tú, qué vas a desear, votar o temer. En ese escenario, la libertad no ha sido coartada —ha sido simplemente <em>anticipada</em> y canalizada.</p>
+          </div>
+
+          <div class="content-card">
+            <div class="card-header">
+              <span class="card-icon">⚖</span>
+              <span class="card-title">PROPUESTA DE VÉLIZ: ABOLICIÓN, NO REFORMA</span>
+            </div>
+            <p>Lo que distingue a Véliz de otros críticos del capitalismo de vigilancia (incluida la propia Zuboff) es su <strong>radicalidad prescriptiva</strong>. No pide regulación de los datos; pide su abolición como mercancía. Propone que ciertos tipos de datos —datos de salud, biométricos, de localización, de orientación sexual— sean declarados <strong>inalienables</strong>, igual que los órganos humanos. No puedes vender tu riñón; tampoco deberías poder "vender" (o ceder bajo coerción de ToS) tu rastro digital.</p>
+            <p>Su modelo regulatorio inspecciona democracias del norte de Europa como modelo: regulación agresiva, multas que duelen, y lo que ella llama <strong>"derechos de privacidad estructurales"</strong> que protejan al ciudadano incluso cuando no ha dado consentimiento explícito.</p>
+          </div>
+
+          <div class="content-card card-full counter-card">
+            <div class="card-header">
+              <span class="card-icon">🗣</span>
+              <span class="card-title">CONTRA-ARGUMENTOS: EL DISENSO ILUSTRADO</span>
+            </div>
+
+            <div class="counter-grid">
+              <div class="counter-item">
+                <div class="counter-author">JEFF JARVIS</div>
+                <div class="counter-school">Periodismo digital · CUNY · Liberalismo tecnológico</div>
+                <p>En <em>Public Parts</em> (2011), Jarvis construye el argumento opuesto con igual elegancia: la publicidad ha sido históricamente un motor de emancipación, no de opresión. La privacidad puede ser el privilegio de los que tienen algo que esconder. Los trabajadores migrantes, los enfermos crónicos, los LGTBQ+ en entornos hostiles pueden <em>beneficiarse</em> de plataformas que les conectan con comunidades de apoyo precisamente porque esas plataformas recopilan y correlacionan información. Jarvis acusa a Véliz de un <strong>elitismo inadvertido</strong>: el derecho a la privacidad, en su versión absolutista, presupone que ya tienes otros recursos (económicos, sociales, legales) para protegerte.</p>
+              </div>
+
+              <div class="counter-item">
+                <div class="counter-author">YUVAL NOAH HARARI</div>
+                <div class="counter-school">Historia · U. Hebrea de Jerusalén · Biopoder dataísta</div>
+                <p>Aunque Harari comparte la preocupación de Véliz, la encuadra de modo radicalmente distinto en <em>Homo Deus</em> y <em>21 Lecciones</em>. Para Harari, el problema no es la privacidad <em>per se</em> sino que los algoritmos pueden llegar a conocerte mejor que tú mismo. En ese caso, <strong>la privacidad como derecho individual se vuelve incoherente</strong>: ¿para qué quieres controlar información que tú mismo no puedes interpretar? Harari apunta hacia un problema de soberanía cognitiva colectiva, no de protección de datos individuales.</p>
+              </div>
+
+              <div class="counter-item">
+                <div class="counter-author">EVGENY MOROZOV</div>
+                <div class="counter-school">Crítica tecnológica · Think tanks europeos · Neo-solucionismo</div>
+                <p>Morozov, en <em>To Save Everything, Click Here</em>, anticipa el límite de Véliz desde otro ángulo: el problema no es que no haya regulación de datos, sino que la solución regulatoria <strong>presupone la legitimidad del Estado</strong> como garante de esa protección. En contextos donde el Estado ES el mayor recopilador de datos (China, pero también EEUU post-Snowden), transferir el control de datos de corporaciones a gobiernos no es emancipación —es cambiar de dueño. Véliz no responde satisfactoriamente a este vector del argumento.</p>
+              </div>
+
+              <div class="counter-item">
+                <div class="counter-author">PETER SWIRE</div>
+                <div class="counter-school">Derecho · Georgia Tech · Pragmatismo regulatorio</div>
+                <p>Swire representa la crítica desde dentro del establecimiento jurídico: la propuesta de Véliz de datos inalienables ignora que <strong>la economía digital moderna es imposible sin algún grado de intercambio de datos</strong>. Los sistemas de recomendación médica, los coches autónomos, la detección de fraudes financieros —todo ello requiere datasets masivos. Swire propone un modelo de "privacidad contextual" (basado en Helen Nissenbaum) que distingue entre usos legítimos e ilegítimos según el contexto de origen del dato, no su abolición como mercancía.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= SECTION 02: IMPRESIONES ======= -->
+      <section id="section-impresiones" class="content-section">
+        <div class="section-header">
+          <div class="section-tag">CAPÍTULO II</div>
+          <h2 class="section-title">Impresiones: Vigencia & La IA Actual</h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card card-full">
+            <div class="card-header">
+              <span class="card-icon">🟢</span>
+              <span class="card-title">LO QUE VÉLIZ VIO ANTES QUE NADIE — VIGENTE EN 2025</span>
+            </div>
+            <p>Publicado en 2021, el libro de Véliz resulta hoy más preciso que cuando fue escrito. Lo cual no es un elogio menor: predecir el futuro tecnológico en un texto académico requiere no tanto visión profética como una comprensión estructural más profunda que la de los propios actores del mercado.</p>
+          </div>
+
+          <div class="content-card vigente-card">
+            <div class="card-header">
+              <span class="card-icon">✓</span>
+              <span class="card-title">VIGENTE: El dato como arma política</span>
+            </div>
+            <p>Véliz insistía en que los datos no son neutrales —son <strong>instrumentos de poder que se utilizan activamente para moldear comportamientos políticos</strong>. El affaire Cambridge Analytica era reciente cuando escribió el libro, pero la tendencia se ha acelerado: las elecciones de 2024 en varios países occidentales muestran cómo la micro-segmentación psicográfica, alimentada por datos de redes sociales, es ya infraestructura rutinaria de campaña. Véliz tenía razón: no es un escándalo aislado, es el modo de operación normal.</p>
+          </div>
+
+          <div class="content-card vigente-card">
+            <div class="card-header">
+              <span class="card-icon">✓</span>
+              <span class="card-title">VIGENTE: La ilusión del consentimiento informado</span>
+            </div>
+            <p>Su crítica al modelo de consentimiento basado en ToS de miles de palabras ha sido vindicada por los propios reguladores. El RGPD europeo, que teóricamente implementaba ese modelo, ha demostrado ser <strong>efectivo sólo para las empresas que pueden pagar abogados de cumplimiento normativo</strong>, no para los usuarios. El "consent fatigue" que Véliz describía como un problema teórico es hoy un fenómeno medido empíricamente: la mayoría de usuarios hace clic en "acepto" en menos de 8 segundos sin leer nada.</p>
+          </div>
+
+          <div class="content-card vigente-card">
+            <div class="card-header">
+              <span class="card-icon">✓</span>
+              <span class="card-title">VIGENTE: Datos biométricos y cuerpo como dato</span>
+            </div>
+            <p>Su capítulo sobre datos biométricos —los más íntimos, los más permanentes, los más imposibles de revocar— ha ganado urgencia exponencial con la proliferación de wearables, aplicaciones de salud mental, y el uso de reconocimiento facial en espacios públicos. Los datos de <strong>frecuencia cardíaca en momentos de tensión emocional</strong>, recopilados por relojes inteligentes y vendidos a aseguradoras, son exactamente el escenario que Véliz describía como hipotético. Ha dejado de serlo.</p>
+          </div>
+
+          <div class="content-card card-full obsolete-card">
+            <div class="card-header">
+              <span class="card-icon">⚠</span>
+              <span class="card-title">LO QUE LA IA GENERATIVA HA DEJADO OBSOLETO — O INSUFICIENTE</span>
+            </div>
+            <p>Pero Véliz escribió antes del <strong>segundo gran quiebre</strong> de la historia de la IA: el despliegue masivo de modelos de lenguaje grande (LLMs) a partir de 2022. Y ese quiebre no invalida su tesis central, pero la hace insuficiente en al menos tres frentes críticos.</p>
+          </div>
+
+          <div class="content-card obsolete-card">
+            <div class="card-header">
+              <span class="card-icon">✗</span>
+              <span class="card-title">INSUFICIENTE: El problema ya no es solo la recolección</span>
+            </div>
+            <p>El modelo de Véliz presupone un ciclo: datos recolectados → datos almacenados → datos vendidos → daño al usuario. La IA generativa introduce una mutación fundamental: los <strong>modelos aprenden de los datos y los internalizan de forma no extraíble</strong>. Ya no puedes simplemente "borrar" tu dato del sistema; el modelo ha aprendido de él y ese aprendizaje es parte permanente del peso de la red neuronal. El derecho al olvido del RGPD, que Véliz celebra, se vuelve técnicamente problemático en este nuevo contexto. <em>Machine unlearning</em> es un campo de investigación activo precisamente porque nadie sabe aún cómo hacerlo bien.</p>
+          </div>
+
+          <div class="content-card obsolete-card">
+            <div class="card-header">
+              <span class="card-icon">✗</span>
+              <span class="card-title">INSUFICIENTE: El dato generado sin input del usuario</span>
+            </div>
+            <p>La gran revelación de los LLMs es que ya no necesitan tus datos <em>directos</em> para inferir información sensible sobre ti. A partir de tu forma de escribir, de las preguntas que haces a un chatbot, de la velocidad de tu tipeo y tus correcciones, <strong>los sistemas pueden inferir estado de ánimo, nivel educativo, posición política e incluso tendencias de salud mental</strong> sin haber recopilado un solo dato explícitamente tuyo. Véliz no tiene respuesta para esto porque su marco teórico asume que el dato existe antes de ser recolectado. La IA generativa produce el dato en el momento de la interacción.</p>
+          </div>
+
+          <div class="content-card obsolete-card">
+            <div class="card-header">
+              <span class="card-icon">✗</span>
+              <span class="card-title">INSUFICIENTE: Agencia distribuida y responsabilidad difusa</span>
+            </div>
+            <p>El modelo regulatorio de Véliz asume que hay un actor responsable identificable: Google recopila tus datos, Google los vende, Google es responsable. Los sistemas de IA generativa actuales operan con <strong>cadenas de responsabilidad fracturadas</strong>: un modelo entrenado por OpenAI, desplegado via API por una startup, usado en una app de terceros, que procesa tus datos según los términos de cuatro contratos distintos. ¿Quién es el responsable? Su propuesta de datos como inalienables no responde a esta arquitectura de responsabilidad difusa, que es precisamente la que el mercado ha adoptado como estándar.</p>
+          </div>
+
+          <div class="content-card card-full synthesis-card">
+            <div class="card-header">
+              <span class="card-icon">💡</span>
+              <span class="card-title">SÍNTESIS PERSONAL: EL LIBRO QUE SE NECESITA REESCRIBIR</span>
+            </div>
+            <p>Mi impresión, tras leer <em>Privacy is Power</em> en el contexto de 2025, es que estamos ante un libro que diagnosticó correctamente la enfermedad pero propuso el tratamiento antes de conocer la mutación del virus. La tesis de Véliz sobre el poder es impecable; su propuesta regulatoria es pre-LLM y requiere una actualización urgente. El libro que el mundo necesita ahora es <em>Privacy is Power 2.0</em>: uno que mantenga el rigor moral de Véliz pero que incorpore la fenomenología nueva de los modelos generativos, la inferencia sin datos explícitos, y el problema del aprendizaje no borrable. Ese libro no existe todavía.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= SECTION 03: CRÍTICA Y DEFENSA ======= -->
+      <section id="section-critica" class="content-section">
+        <div class="section-header">
+          <div class="section-tag">CAPÍTULO III</div>
+          <h2 class="section-title">Crítica & Defensa — Sin Filtros</h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="warning-banner">
+          <span class="warning-icon">⚡</span>
+          <span>ANÁLISIS DIRECTO · POSICIONES ARGUMENTADAS · MATERIAL PARA DEBATE ACADÉMICO</span>
+          <span class="warning-icon">⚡</span>
+        </div>
+
+        <div class="content-grid">
+
+          <!-- DEBILIDAD 1 -->
+          <div class="content-card debate-card">
+            <div class="debate-badge weakness">DEBILIDAD #1</div>
+            <div class="card-header">
+              <span class="card-icon">💰</span>
+              <span class="card-title">VIABILIDAD ECONÓMICA: EL ELEFANTE EN LA HABITACIÓN</span>
+            </div>
+            <div class="debate-body">
+              <div class="debate-critique">
+                <div class="debate-label critique-label">⚔ CRÍTICA</div>
+                <p>Véliz propone esencialmente <strong>destruir el modelo de negocio que financia el 80% de internet tal como la conocemos</strong>. Google Search, Gmail, YouTube, Facebook, Instagram, Twitter/X —todos son "gratuitos" porque el usuario paga con datos. Si los datos se vuelven inalienables, estas plataformas deben cobrar o desaparecer. La pregunta que Véliz no responde con suficiente concreción es: ¿quién paga la transición?</p>
+                <p>En el corto plazo, un internet de pago es un internet <em>más desigual</em>, no menos. El acceso a información se convierte en privilegio de quienes pueden pagar suscripciones. La señora mayor en un pueblo rural que usa Google Maps y YouTube de forma gratuita pierde esos servicios. Véliz asume implícitamente que los usuarios pueden financiar servicios de calidad equivalente, lo cual es una suposición de clase media ilustrada que el libro no tematiza.</p>
+              </div>
+              <div class="debate-defense">
+                <div class="debate-label defense-label">🛡 DEFENSA</div>
+                <p>Véliz anticiparía que este argumento confunde <em>lo que existe</em> con <em>lo que puede existir</em>. La economía antes de las redes sociales también sobrevivía. Modelos alternativos —Wikipedia, software libre, servicios públicos digitales financiados por impuestos— demuestran que internet no requiere vigilancia para existir. La pregunta correcta no es "¿quién paga?", sino "¿qué tipo de internet queremos?". El libro hace esa elección consciente.</p>
+              </div>
+            </div>
+            <div class="verdict-bar">
+              <div class="verdict-label">VEREDICTO:</div>
+              <div class="verdict-text">La debilidad es real pero parcialmente respondible. Falta un capítulo completo de economía política de la transición.</div>
+            </div>
+          </div>
+
+          <!-- DEBILIDAD 2 -->
+          <div class="content-card debate-card">
+            <div class="debate-badge weakness">DEBILIDAD #2</div>
+            <div class="card-header">
+              <span class="card-icon">🌍</span>
+              <span class="card-title">EUROCENTRISMO REGULATORIO: ¿REGULACIÓN PARA QUIÉN?</span>
+            </div>
+            <div class="debate-body">
+              <div class="debate-critique">
+                <div class="debate-label critique-label">⚔ CRÍTICA</div>
+                <p>El libro de Véliz presupone implícitamente un contexto político que no existe para la mayoría de la humanidad: <strong>un Estado de derecho democrático con instituciones capaces de regular a grandes corporaciones y que no es en sí mismo el agresor de la privacidad de sus ciudadanos</strong>. Esta suposición es verdadera para quizás 800 millones de personas en Europa occidental y partes de Norteamérica. Para el resto del mundo —2.000 millones bajo regímenes autoritarios, 1.500 millones en democracias débiles— la propuesta regulatoria de Véliz no sólo no funciona, sino que puede ser activamente peligrosa.</p>
+                <p>En China, en Irán, en Rusia, en Etiopía, en Myanmar —el problema de privacidad no es que Google use tus datos para mostrarte anuncios. El problema es que el Estado usa esos datos para encarcelarte. Recomendar que los ciudadanos confíen sus datos al regulador estatal, como hace Véliz implícitamente, es en esos contextos una receta para la represión más eficiente.</p>
+              </div>
+              <div class="debate-defense">
+                <div class="debate-label defense-label">🛡 DEFENSA</div>
+                <p>Véliz escribe desde y para el contexto democrático liberal, y lo hace conscientemente. Un libro no puede resolver todos los problemas del mundo. Además, su propuesta de datos inalienables <em>también</em> protege contra el Estado: si los datos médicos no pueden ser cedidos ni vendidos, esa inalienabilidad se aplica también frente a la demanda gubernamental. No es una defensa perfecta, pero el marco es más robusto de lo que parece.</p>
+              </div>
+            </div>
+            <div class="verdict-bar">
+              <div class="verdict-label">VEREDICTO:</div>
+              <div class="verdict-text">Debilidad estructural grave. El libro necesita al menos un capítulo sobre contextos no-democráticos para ser globalmente riguroso.</div>
+            </div>
+          </div>
+
+          <!-- DEBILIDAD 3 -->
+          <div class="content-card debate-card">
+            <div class="debate-badge weakness">DEBILIDAD #3</div>
+            <div class="card-header">
+              <span class="card-icon">🧠</span>
+              <span class="card-title">LA PARADOJA DEL AGENTE RACIONAL: ¿QUIERE LA GENTE SU PROPIA PRIVACIDAD?</span>
+            </div>
+            <div class="debate-body">
+              <div class="debate-critique">
+                <div class="debate-label critique-label">⚔ CRÍTICA</div>
+                <p>Esta es la debilidad que duele más, porque toca el núcleo filosófico del proyecto. Véliz asume que los usuarios <em>quieren</em> privacidad pero han sido manipulados o coaccionados para cederla. Los datos empíricos cuentan una historia más incómoda: la denominada <strong>"paradoja de la privacidad"</strong> (Acquisti, Brandimarte, Loewenstein, 2015) muestra que los mismos usuarios que declaran preocuparse por su privacidad voluntariamente revelan información íntima a cambio de beneficios triviales.</p>
+                <p>Esto no es ignorancia —es que los seres humanos son hiperbólicos en tiempo: valoramos el beneficio inmediato (la conveniencia de la app) exponencialmente más que el riesgo futuro (el abuso de datos en diez años). <strong>Ninguna cantidad de regulación cambia esta estructura cognitiva</strong>. Véliz trata el problema de privacidad como si fuera solucionable con mejores leyes, cuando podría ser en parte un problema de arquitectura cognitiva humana irremediable a escala política.</p>
+              </div>
+              <div class="debate-defense">
+                <div class="debate-label defense-label">🛡 DEFENSA</div>
+                <p>Véliz tiene una respuesta elegante a esto: <strong>no necesitamos que los usuarios quieran privacidad individualmente, igual que no necesitamos que cada ciudadano quiera agua limpia</strong>. Las normativas sanitarias protegen el agua potable sin requerir que cada persona elija activamente no beber aguas fecales. La privacidad como bien público no depende de las preferencias individuales —depende de una decisión política colectiva sobre qué tipo de mundo queremos construir. Este es el momento más poderoso del libro y la respuesta más convincente a esta crítica.</p>
+              </div>
+            </div>
+            <div class="verdict-bar">
+              <div class="verdict-label">VEREDICTO:</div>
+              <div class="verdict-text">La crítica es válida; la respuesta de Véliz también. Empate intelectual que el libro no resuelve del todo, pero el argumento del bien público es filosóficamente sólido.</div>
+            </div>
+          </div>
+
+          <!-- Balance final -->
+          <div class="content-card card-full final-balance">
+            <div class="card-header">
+              <span class="card-icon">⚖</span>
+              <span class="card-title">BALANCE FINAL: ¿VALE LA PENA LEERLO?</span>
+            </div>
+            <p><strong>Sí, sin ninguna duda</strong>. Con todas sus debilidades, <em>Privacy is Power</em> es uno de los pocos textos sobre tecnología que se niega a ser técnico cuando la cuestión es política. Véliz entiende que el problema de los datos no es un problema de ingeniería —es un problema de filosofía política disfrazado de problema de ingeniería. Esa distinción, sola, justifica el libro. Sus propuestas pueden ser imperfectas; su diagnóstico es imprescindible.</p>
+            <p>El estándar justo para evaluarlo no es "¿resuelve todos los problemas?" sino "¿reencuadra el problema de forma que nos permite pensar mejor?". En ese sentido, <em>Privacy is Power</em> es un éxito rotundo.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======= SECTION 04: MAPA ======= -->
+      <section id="section-mapa" class="content-section">
+        <div class="section-header">
+          <div class="section-tag">CAPÍTULO IV</div>
+          <h2 class="section-title">Mapa de Autores — Grafo Interactivo</h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="graph-instructions">
+          <span class="gi-icon">🖱</span>
+          <span>Haz clic en un nodo para ver la ficha del autor · Arrastra para reorganizar · Scroll para zoom</span>
+        </div>
+
+        <div class="graph-wrapper">
+          <div id="network-graph"></div>
+
+          <!-- Info Panel -->
+          <div id="node-panel" class="node-panel hidden">
+            <button class="panel-close" onclick="closePanel()">✕</button>
+            <div class="panel-affiliation" id="panel-affiliation"></div>
+            <h3 class="panel-name" id="panel-name"></h3>
+            <div class="panel-school" id="panel-school"></div>
+            <div class="panel-divider"></div>
+            <div class="panel-section-label">CONEXIÓN CON VÉLIZ</div>
+            <p class="panel-connection" id="panel-connection"></p>
+            <div class="panel-divider"></div>
+            <div class="panel-section-label">OBRA CLAVE</div>
+            <p class="panel-work" id="panel-work"></p>
+            <div class="panel-section-label">CITA REPRESENTATIVA</div>
+            <p class="panel-quote" id="panel-quote"></p>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-title">LEYENDA DEL GRAFO</div>
+          <div class="legend-items">
+            <div class="legend-item"><span class="legend-dot dot-center"></span>Nodo central (Véliz)</div>
+            <div class="legend-item"><span class="legend-dot dot-ally"></span>Aliado conceptual</div>
+            <div class="legend-item"><span class="legend-dot dot-critic"></span>Crítico / Contrario</div>
+            <div class="legend-item"><span class="legend-dot dot-foundational"></span>Fundamento teórico</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-left">
+        <span class="footer-label">PRÁCTICA UNIVERSITARIA</span>
+        <span class="footer-sep">·</span>
+        <span>Análisis de <em>Privacy is Power</em> · Carissa Véliz</span>
+      </div>
+      <div class="footer-controls">
+        <button class="ctrl-btn" title="Anterior" onclick="prevSection()">⏮</button>
+        <button class="ctrl-btn" title="Siguiente" onclick="nextSection()">⏭</button>
+      </div>
+      <div class="footer-right">
+        <span>© 2025 · Todos los derechos académicos reservados</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
